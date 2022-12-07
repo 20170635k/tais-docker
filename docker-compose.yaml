@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  tasks-app:
+    build: ./tasks-app #ruta donde el archivo de configuración Dockerfile se encuentra
+    container_name: orders-app_container
+    ports:
+      - '5173:5173'
+    #agregar estas 2 instrucciones stdin_open y tty en true, nos permite inicializar los contenedores en modo interactivo, lo que significa que nuestra aplicación de react, no se detendrá de manera automática 
+    stdin_open: true
+    tty: true
